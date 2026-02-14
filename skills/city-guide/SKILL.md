@@ -68,6 +68,7 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
         *   **Reddit:** "[Place] [City] reddit review tips"
         *   **Twitter/X:** "[Place] [City] twitter review experience"
         *   **TripAdvisor:** "[Place] [City] tripadvisor review"
+        *   **Google Reviews:** "[Place] [City] google reviews recent"
         *   **Blogs:** "[Place] [City] blog review 2026"
     *   Look for: Parking chaos, best arrival times, hidden gems, "tourist trap" warnings, crowd levels, and recent experiences.
 4. **Output:** Present 3 top options with their status (Visited/Wishlist) and a **"Pro Tip"** derived from the search.

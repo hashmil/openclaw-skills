@@ -46,6 +46,7 @@ This skill manages `memory/dubai-tracker.json`. Use it to log new visits, update
         *   **Reddit:** "[Place] Dubai reddit review tips"
         *   **Twitter/X:** "[Place] Dubai twitter review experience"
         *   **TripAdvisor:** "[Place] Dubai tripadvisor review"
+        *   **Google Reviews:** "[Place] Dubai google reviews recent"
         *   **Blogs:** "[Place] Dubai blog review 2026"
     *   Look for: Parking chaos, best arrival times, hidden gems, "tourist trap" warnings, crowd levels, and recent experiences.
 4.  **Output:** Present 3 top options with their status (Visited/Wishlist) and a **"Pro Tip"** derived from the search (e.g., "Go at 5 PM for sunset, park at Mall").
