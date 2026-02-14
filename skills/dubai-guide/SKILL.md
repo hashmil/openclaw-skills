@@ -6,21 +6,36 @@ requires: ["goplaces"]
 
 # Dubai Guide Skill
 
+> **⚠️ API Key Required:** This skill requires the `goplaces` skill and a Google Places API key.
+> Set up `goplaces` first and configure your API key via `goplaces auth` or environment variable.
+
 This skill manages `memory/dubai-tracker.json`. Use it to log new visits, update entries, or ask for recommendations.
 
 ## Data Source
 - **File:** `memory/dubai-tracker.json`
 - **Helper:** `goplaces` CLI (for fetching address, rating, location data).
 
+## First-Time Setup
+
+If `memory/dubai-tracker.json` doesn't exist, the skill will create it with this structure:
+
+```json
+{
+  "city": "Dubai",
+  "places": []
+}
+```
+
 ## Actions
 
 ### 1. Log a New Place
 **Trigger:** "Log [Place Name]", "I went to [Place]", "Add [Place]"
 **Procedure:**
-1.  **Search:** Run `goplaces search "[Place Name] Dubai" --limit 1 --json`.
-2.  **Verify:** Check if the result matches the user's intent.
-3.  **Read DB:** Read `memory/dubai-tracker.json`.
-4.  **Append:** Add a new entry to the `places` array using the **Schema** below.
+1.  **Check Database:** Ensure `memory/dubai-tracker.json` exists. If not, create it with the structure above.
+2.  **Search:** Run `goplaces search "[Place Name] Dubai" --limit 1 --json`.
+3.  **Verify:** Check if the result matches the user's intent.
+4.  **Read DB:** Read `memory/dubai-tracker.json`.
+5.  **Append:** Add a new entry to the `places` array using the **Schema** below.
     *   *Auto-fill:* Name, Google Place ID, Details (rating, address), Location.
     *   *Infer:* Area (from address), Type (from `types`), Environment (Indoor/Outdoor based on type/photos if available, or ask user).
     *   *Ask User:* specific notes, "Summer Safe?" (if unclear), "Vibe".
