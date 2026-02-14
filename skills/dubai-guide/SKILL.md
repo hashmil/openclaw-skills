@@ -42,8 +42,12 @@ This skill manages `memory/dubai-tracker.json`. Use it to log new visits, update
     *   *If Summer:* Filter for `environment: "Indoor"` or `seasonality: "Summer Safe"`.
     *   *If Winter:* Prefer `environment: "Outdoor"` or `seasonality: "Winter Only"`.
 3.  **Vibe Check (Consensus Search):**
-    *   For the top candidate, run a quick `web_search` (e.g., "[Place] Dubai sunset crowds reddit tips").
-    *   Look for: Parking chaos, best arrival times, hidden gems, or "tourist trap" warnings.
+    *   For the top candidate, run multiple targeted searches across different platforms:
+        *   **Reddit:** "[Place] Dubai reddit review tips"
+        *   **Twitter/X:** "[Place] Dubai twitter review experience"
+        *   **TripAdvisor:** "[Place] Dubai tripadvisor review"
+        *   **Blogs:** "[Place] Dubai blog review 2024"
+    *   Look for: Parking chaos, best arrival times, hidden gems, "tourist trap" warnings, crowd levels, and recent experiences.
 4.  **Output:** Present 3 top options with their status (Visited/Wishlist) and a **"Pro Tip"** derived from the search (e.g., "Go at 5 PM for sunset, park at Mall").
 
 ## JSON Schema (Enforced)

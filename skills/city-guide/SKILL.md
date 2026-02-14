@@ -64,8 +64,12 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
     *   *If hot weather:* Filter for `environment: "Indoor"` or `seasonality: "All Year"`.
     *   *If nice weather:* Prefer `environment: "Outdoor"`.
 3. **Vibe Check (Consensus Search):**
-    *   For the top candidate, run a quick `web_search` (e.g., "[Place] [City] tips reddit").
-    *   Look for: Parking chaos, best arrival times, hidden gems, or "tourist trap" warnings.
+    *   For the top candidate, run multiple targeted searches across different platforms:
+        *   **Reddit:** "[Place] [City] reddit review tips"
+        *   **Twitter/X:** "[Place] [City] twitter review experience"
+        *   **TripAdvisor:** "[Place] [City] tripadvisor review"
+        *   **Blogs:** "[Place] [City] blog review 2024"
+    *   Look for: Parking chaos, best arrival times, hidden gems, "tourist trap" warnings, crowd levels, and recent experiences.
 4. **Output:** Present 3 top options with their status (Visited/Wishlist) and a **"Pro Tip"** derived from the search.
 
 ## JSON Schema (Enforced)
