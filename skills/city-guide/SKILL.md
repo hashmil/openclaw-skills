@@ -45,7 +45,7 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
 5. **Append:** Add a new entry to the `places` array using the **Schema** below.
     *   *Auto-fill:* Name, Google Place ID, Details (rating, address), Location.
     *   *Infer:* Area (from address), Type (from `types`), Environment (Indoor/Outdoor based on type/photos if available, or ask user).
-    *   *Ask User:* specific notes, "Good for hot weather?" (if unclear), "Vibe".
+    *   *Ask User:* specific notes, "Good for what weather?" (rain, snow, heat, etc.), "Vibe".
 5. **Save:** Write back to `memory/city-tracker.json`.
 
 ### 3. Log a Repeat Visit
@@ -55,14 +55,16 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
 2. **Update:** Add a new object to the `visits` array with `date` (YYYY-MM-DD) and `notes`.
 
 ### 4. Recommend
-**Trigger:** "Where should I go?", "Suggest a place for [activity]", "Dinner spot?"
+**Trigger:** "Where should I go?", "Suggest a place for [activity]", "Dinner spot?", "It's raining, where's good?"
 **Procedure:**
 1. **Analyze Context:**
-    *   **Weather:** Hot/cold/rainy? User's preference for indoor/outdoor?
+    *   **Weather:** Ask or infer current conditions — hot, cold, rainy, snowy, humid, windy?
     *   **Vibe:** Chill, fancy, work, kids?
-2. **Filter DB:** Query `memory/city-tracker.json`.
-    *   *If hot weather:* Filter for `environment: "Indoor"` or `seasonality: "All Year"`.
-    *   *If nice weather:* Prefer `environment: "Outdoor"`.
+2. **Filter DB:** Query `memory/city-tracker.json` based on weather:
+    *   *If raining/snowy:* Filter for `environment: "Indoor"` or `seasonality` includes "Rainy" or "Snowy".
+    *   *If hot/sunny:* Filter for `environment: "Indoor"` or `seasonality` includes "Sunny" or "Hot Weather".
+    *   *If cold but clear:* Prefer `environment: "Outdoor"` with `seasonality: "Cold Weather"` or "All Year".
+    *   *If perfect weather:* Prioritize `environment: "Outdoor"` or "Hybrid".
 3. **Vibe Check (Consensus Search):**
     *   For the top candidate, run multiple targeted searches across different platforms:
         *   **Reddit:** "[Place] [City] reddit review tips"
@@ -84,7 +86,7 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
       "area": "string (e.g. Downtown, Waterfront)",
       "type": "string (Cafe, Beach, Mall, Dinner, Activity)",
       "environment": "Indoor ❄️ | Outdoor ☀️ | Hybrid 🌓",
-      "seasonality": "All Year 🗓️ | Hot Weather 🛡️ | Cold Weather ❄️",
+      "seasonality": "All Year 🗓️ | Sunny ☀️ | Rainy 🌧️ | Snowy ❄️ | Hot Weather 🔥 | Cold Weather 🧊",
       "vibe": "comma-separated tags (e.g. work, date-night, loud, quiet)",
       "status": "Visited ✅ | Wishlist 📌",
       "google_place_id": "string",
@@ -106,9 +108,13 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
 ```
 
 ## Nuance Guide
-- **Hot Weather Safe:** Malls, heavily AC'd cafes, indoor play areas.
-- **Cold Weather Only:** Outdoor terraces, beaches (in cold climates), open-air markets.
-- **Parking:** Always note if parking is "Valet only" or "Easy".
+- **Sunny/Hot Weather:** Malls, AC'd cafes, indoor play areas, beaches (with shade), pools.
+- **Rainy Weather:** Covered walkways, indoor markets, museums, cafes with good window views.
+- **Snowy Weather:** Heated indoor venues, winter markets, cozy cafes, places with fireplaces.
+- **Cold but Clear:** Outdoor terraces with heaters, winter activities, scenic viewpoints.
+- **Humid:** Places with good ventilation or AC, indoor venues.
+- **Windy:** Sheltered outdoor spots, indoor alternatives.
+- **Parking:** Always note if parking is "Valet only", "Easy", or "Street parking".
 
 ## Examples
 
@@ -125,3 +131,6 @@ If `memory/city-tracker.json` doesn't exist, the skill will create it with this 
 - "Where should I go for dinner?"
 - "Suggest a cafe for working"
 - "It's raining, where's good indoors?"
+- "It's snowing, something cozy?"
+- "Hot day, need AC!"
+- "Where's good on a sunny day?"
