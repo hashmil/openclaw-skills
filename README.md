@@ -26,9 +26,9 @@ Daily autonomous journaling — your agent picks a topic, researches it deeply, 
 - Configurable topics, length, tone via optional `config.md`
 - Daily cron job with one-command setup
 
-```bash
-cp -r skills/wiki-journal/ ~/.openclaw/skills/wiki-journal/
-bash ~/.openclaw/skills/wiki-journal/scripts/setup.sh
+**Install:** Copy this URL and paste it to your agent — *"Install this skill"*
+```
+https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/wiki-journal/SKILL.md
 ```
 
 [Full docs →](skills/wiki-journal/README.md)
@@ -46,8 +46,9 @@ Generic city lifestyle guide — customize for your own city. Tracks restaurants
 - Vibe checks via Reddit, TripAdvisor, blogs
 - Google Reviews integration
 
-```bash
-cp -r skills/city-guide/ ~/.openclaw/skills/city-guide/
+**Install:** Copy this URL and paste it to your agent — *"Install this skill"*
+```
+https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md
 ```
 
 [View SKILL.md →](skills/city-guide/SKILL.md)
@@ -63,33 +64,29 @@ Pre-configured version of City Guide optimized for Dubai's extreme climate. Read
 - Seasonal recommendations based on extreme heat
 - Local area knowledge (Jumeirah, DIFC, Marina, etc.)
 
-```bash
-cp -r skills/dubai-guide/ ~/.openclaw/skills/dubai-guide/
+**Install:** Copy this URL and paste it to your agent — *"Install this skill"*
+```
+https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md
 ```
 
 [View SKILL.md →](skills/dubai-guide/SKILL.md)
 
 ---
 
-## How to Install
+## Install Methods
 
-### Quick Install
+### 1. Paste the URL (Easiest)
 
-1. Copy the raw URL to a skill's `SKILL.md`
-2. Paste it in a message to your OpenClaw bot
-3. Say: *"Install this skill"*
+Copy a skill's raw URL from above and paste it in a message to your OpenClaw agent. Tell it to install the skill. Done.
 
-**Raw URLs:**
-- **Wiki Journal:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/wiki-journal/SKILL.md`
-- **City Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md`
-- **Dubai Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md`
-
-### Manual Install
+### 2. Clone and Copy
 
 ```bash
 git clone https://github.com/hashmil/openclaw-skills.git
 cp -r openclaw-skills/skills/<skill-name>/ ~/.openclaw/skills/<skill-name>/
 ```
+
+Pick the skills you want — no need to install all of them.
 
 ---
 
