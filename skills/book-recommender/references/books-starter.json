@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": null,
+  "books": [
+    {
+      "title": "Example Book (delete me)",
+      "author": "Example Author",
+      "status": "finished",
+      "liked": true,
+      "rating": 5,
+      "format": null,
+      "series": null,
+      "started": null,
+      "finished": null,
+      "tags": ["sci-fi"],
+      "notes": "Placeholder — replace with your own books."
+    },
+    {
+      "title": "Example Series Book 1 (delete me)",
+      "author": "Example Author",
+      "status": "to-read",
+      "liked": null,
+      "rating": null,
+      "format": null,
+      "series": { "name": "Example Series", "book": 1 },
+      "started": null,
+      "finished": null,
+      "tags": ["fantasy"],
+      "notes": "Placeholder — replace with your own books."
+    }
+  ]
+}
