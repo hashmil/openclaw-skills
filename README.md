@@ -32,6 +32,7 @@ Daily autonomous journaling — your agent picks a topic, researches it deeply, 
 <details>
 <summary><strong>Install</strong></summary>
 
+Copy this URL and paste it to your agent — *"Install this skill"*
 ```
 https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/wiki-journal/SKILL.md
 ```
@@ -54,6 +55,7 @@ Generic city lifestyle guide — customize for your own city. Tracks restaurants
 <details>
 <summary><strong>Install</strong></summary>
 
+Copy this URL and paste it to your agent — *"Install this skill"*
 ```
 https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md
 ```
@@ -74,6 +76,7 @@ Pre-configured version of City Guide optimized for Dubai's extreme climate. Read
 <details>
 <summary><strong>Install</strong></summary>
 
+Copy this URL and paste it to your agent — *"Install this skill"*
 ```
 https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md
 ```
@@ -97,6 +100,7 @@ Track TV shows, get recommendations, and manage your watchlist. Uses a local SQL
 <details>
 <summary><strong>Install</strong></summary>
 
+Copy this URL and paste it to your agent — *"Install this skill"*
 ```
 https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/tv-tracker/SKILL.md
 ```
@@ -120,6 +124,7 @@ Spoiler-free book recommendations with reading order verification, cover images,
 <details>
 <summary><strong>Install</strong></summary>
 
+Copy this URL and paste it to your agent — *"Install this skill"*
 ```
 https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/book-recommender/SKILL.md
 ```
