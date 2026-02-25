@@ -1,93 +1,98 @@
-# OpenClaw Skills by Hash
+# OpenClaw Skills
 
-A collection of custom OpenClaw skills for the community.
-
-## Skills
-
-### 🌴 Dubai Guide (Pre-configured)
-My personal Dubai lifestyle database — optimized for Dubai's extreme weather patterns.
-
-**Best for:** Dubai residents/visitors who want ready-to-use recommendations.
-
-**Features:**
-- Pre-configured for Dubai's climate (Summer Safe 🛡️, Winter Only ❄️)
-- Seasonal recommendations based on Dubai's extreme heat
-- Local area knowledge (Jumeirah, DIFC, Marina, etc.)
-
-**Quick Install:**
-```
-https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md
-```
-
-[View Skill Docs →](skills/dubai-guide/SKILL.md)
+A collection of shareable [OpenClaw](https://openclaw.com) skills.
 
 ---
 
-### 🌍 City Guide (Customizable)
-Generic city guide — customize for your own city! Works for any city worldwide.
+## Skills
 
-**Best for:** Users who want to track places in their own city (London, NYC, Tokyo, etc.)
+| Skill | Description | Requirements |
+|-------|-------------|--------------|
+| [**wiki-journal**](skills/wiki-journal/) | Daily journaling with deep Wikipedia/encyclopedia research. Builds a wikilinked knowledge graph over time. | Web search (optional) |
+| [**city-guide**](skills/city-guide/) | Customizable city lifestyle guide. Track places, get weather-smart recommendations for any city. | `goplaces` skill, Google Places API key |
+| [**dubai-guide**](skills/dubai-guide/) | Pre-configured Dubai lifestyle database with extreme-heat awareness and local area knowledge. | `goplaces` skill, Google Places API key |
+
+---
+
+### Wiki Journal
+
+Daily autonomous journaling — your agent picks a topic, researches it deeply, and writes a structured entry with `[[wikilinks]]` connecting concepts. Over time, the journal becomes an interconnected knowledge base.
+
+**Features:**
+- Autonomous topic selection following wikilink trails from previous entries
+- Deep research via web search + training knowledge
+- Structured entries: core argument, applied reflection, deeper implications, open questions
+- `[[Wikilinks]]` compatible with Obsidian, Logseq, or plain markdown
+- Configurable topics, length, tone via optional `config.md`
+- Daily cron job with one-command setup
+
+```bash
+cp -r skills/wiki-journal/ ~/.openclaw/skills/wiki-journal/
+bash ~/.openclaw/skills/wiki-journal/scripts/setup.sh
+```
+
+[Full docs →](skills/wiki-journal/README.md)
+
+---
+
+### City Guide
+
+Generic city lifestyle guide — customize for your own city. Tracks restaurants, cafes, activities with weather-adaptive recommendations.
 
 **Features:**
 - Set any city worldwide as your base
 - Auto-creates database file if missing
-- Weather-adaptive recommendations (hot/cold weather)
-- Fully customizable for your local climate
+- Weather-adaptive recommendations (hot/cold/rain/snow)
+- Vibe checks via Reddit, TripAdvisor, blogs
+- Google Reviews integration
 
-**Quick Install:**
-```
-https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md
+```bash
+cp -r skills/city-guide/ ~/.openclaw/skills/city-guide/
 ```
 
-[View Skill Docs →](skills/city-guide/SKILL.md)
+[View SKILL.md →](skills/city-guide/SKILL.md)
+
+---
+
+### Dubai Guide
+
+Pre-configured version of City Guide optimized for Dubai's extreme climate. Ready to use for Dubai residents and visitors.
+
+**Features:**
+- Pre-configured for Dubai's climate (Summer Safe, Winter Only)
+- Seasonal recommendations based on extreme heat
+- Local area knowledge (Jumeirah, DIFC, Marina, etc.)
+
+```bash
+cp -r skills/dubai-guide/ ~/.openclaw/skills/dubai-guide/
+```
+
+[View SKILL.md →](skills/dubai-guide/SKILL.md)
 
 ---
 
 ## How to Install
 
-### Method 1: Quick Install (Easiest)
-1. Copy the raw URL to the skill you want:
-   - **Dubai Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md`
-   - **City Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md`
+### Quick Install
 
+1. Copy the raw URL to a skill's `SKILL.md`
 2. Paste it in a message to your OpenClaw bot
-
 3. Say: *"Install this skill"*
 
-### Method 2: Manual Install
+**Raw URLs:**
+- **Wiki Journal:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/wiki-journal/SKILL.md`
+- **City Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/city-guide/SKILL.md`
+- **Dubai Guide:** `https://raw.githubusercontent.com/hashmil/openclaw-skills/master/skills/dubai-guide/SKILL.md`
 
-1. Clone this repo:
+### Manual Install
+
 ```bash
 git clone https://github.com/hashmil/openclaw-skills.git
+cp -r openclaw-skills/skills/<skill-name>/ ~/.openclaw/skills/<skill-name>/
 ```
-
-2. Copy the skill folder to your OpenClaw skills directory:
-```bash
-# For Dubai Guide
-cp -r openclaw-skills/skills/dubai-guide ~/.openclaw/skills/
-
-# For City Guide
-cp -r openclaw-skills/skills/city-guide ~/.openclaw/skills/
-```
-
----
-
-## Requirements
-
-Both skills require:
-- `goplaces` skill (Google Places integration)
-- Google Places API key
-
-Set up `goplaces` first, then configure your API key.
-
----
-
-## Contributing
-
-Feel free to submit PRs or issues. These skills are provided as-is for the community.
 
 ---
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details.
+MIT — See [LICENSE](LICENSE) for details.

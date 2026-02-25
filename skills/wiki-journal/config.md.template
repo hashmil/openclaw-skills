@@ -1,0 +1,39 @@
+# Wiki-Journal Configuration
+
+Copy this file to `config.md` (same directory as SKILL.md) to customize your journal.
+The agent reads this file before each entry. All sections are optional — delete
+any you don't need and defaults from SKILL.md will apply.
+
+## Topic Domains
+
+<!-- Replace or edit these to match your interests -->
+- Philosophy: phenomenology, existentialism, philosophy of mind, ethics
+- Cognitive Science: embodied cognition, distributed cognition, learning theory
+- Science: emergence, complexity, thermodynamics, quantum mechanics
+- Technology: computing history, internet architecture, cryptography, AI
+- Mathematics: foundations, logic, topology, game theory
+- History: intellectual movements, pivotal figures, turning points
+- Art & Culture: movements, aesthetics, media theory, architecture
+
+## Preferred Topics
+
+<!-- Queue specific topics you want covered. The agent will pick from these first. -->
+<!-- Remove entries as they're covered, or leave them — the agent checks for repeats. -->
+
+## Excluded Topics
+
+<!-- Topics or domains to skip entirely -->
+
+## Entry Length
+
+<!-- short (~800 words) | medium (~2000 words) | long (~4000 words) -->
+medium
+
+## Tone
+
+<!-- academic | conversational | exploratory -->
+exploratory
+
+## Sign-Off
+
+<!-- Optional line appended at the end of each entry. Leave empty for none. -->
